@@ -54,7 +54,8 @@ data/scanfamily/annotations/
         ├── v1_balanced_sqa_annotations_train_scannetv2.json
         └── v1_balanced_sqa_annotations_val_scannetv2.json
 ```
-3. Download all checkpoints and put them under `project/pretrain_weights`
+### Evaluation
+Download all checkpoints and put them under `project/pretrain_weights`
 
 | Checkpoint           | Link                                                         | Note                                              |
 | :------------------- | ------------------------------------------------------------ | ------------------------------------------------- |

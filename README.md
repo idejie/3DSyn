@@ -56,7 +56,6 @@ data/scanfamily/annotations/
 ```
 3. Download all checkpoints and put them under `project/pretrain_weights`
 
-[TO UPDATE link]
 | Checkpoint           | Link                                                         | Note                                              |
 | :------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
 | ScanRefer            | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned ScanRefer from pre-trained checkpoint. |

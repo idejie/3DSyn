@@ -59,11 +59,11 @@ data/scanfamily/annotations/
 [TO UPDATE link]
 | Checkpoint           | Link                                                         | Note                                              |
 | :------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
-| ScanRefer            | [link]() | Fine-tuned ScanRefer from pre-trained checkpoint. |
-| ScanQA               | [link]() | Fine-tined ScanQA from pre-trained checkpoint.    |
-| Sr3D                 | [link]() | Fine-tuned Sr3D from pre-trained checkpoint.      |
-| Nr3D                 | [link]() | Fine-tuned Nr3D from pre-trained checkpoint.      |
-| Scan2Cap             | [link]() | Fine-tuned Scan2Cap from pre-trained checkpoint.  |
+| ScanRefer            | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned ScanRefer from pre-trained checkpoint. |
+| ScanQA               | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tined ScanQA from pre-trained checkpoint.    |
+| Sr3D                 | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Sr3D from pre-trained checkpoint.      |
+| Nr3D                 | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Nr3D from pre-trained checkpoint.      |
+| Scan2Cap             | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Scan2Cap from pre-trained checkpoint.  |
 
 ### Run 
 To run the model, use the following command, task includes scanrefer, scanqa, sr3d, nr3d, and scan2cap.

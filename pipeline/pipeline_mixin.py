@@ -387,6 +387,15 @@ class ModelLossMixin(object):
         data_dict['obj_cls_pre_loss'] = obj_cls_pre_loss
         data_dict['obj_cls_post_loss'] = obj_cls_post_loss
         return data_dict
+    def get_pretrain_loss(self, data_dict):
+        total_loss, caption_cls_loss, obj_cls_raw_loss, obj_cls_pre_loss, obj_cls_post_loss = self.pretrain_loss(data_dict['txt_caption_cls_logit'], data_dict['masked_lm_labels'], data_dict['obj_cls_post_logits'], 
+                           data_dict['obj_cls_pre_logits'], data_dict['obj_cls_raw_logits'], data_dict['obj_labels'], data_dict['obj_masks'])
+        data_dict['total_loss'] = total_loss
+        data_dict['caption_cls_loss'] = caption_cls_loss
+        data_dict['obj_cls_raw_loss'] = obj_cls_raw_loss
+        data_dict['obj_cls_pre_loss'] = obj_cls_pre_loss
+        data_dict['obj_cls_post_loss'] = obj_cls_post_loss
+        return data_dict
     
 class ModelMetricMixin(object):
     def get_scanrefer_metrics(self, data_dict):

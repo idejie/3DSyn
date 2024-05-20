@@ -7,6 +7,7 @@ from dataset.scanrefer import *
 from dataset.referit3d import *
 from dataset.scan2cap import *
 from dataset.sqa import SQADataset
+from dataset.syn import SynDataset
 from pipeline.registry import registry
 
 @registry.register_dataset("scanrefer")
@@ -60,6 +61,13 @@ def get_caption_task_dataset(split='train', tokenizer=None, vocab=None, corpus=N
     else:
         dataset = Scan2CapDataset(split=split, max_obj_len=pc_seq_length, **args)
     tokenizer = registry.get_language_model(tokenizer)()
+    vocab = registry.get_language_model("vocabulary")(vocab)
+    return CaptionDatasetWrapper(dataset, tokenizer, vocab, corpus, txt_seq_length, pc_seq_length, txt_mask_ratio, split)
+
+@registry.register_dataset("pretrain")
+def get_pretrain_dataset(split='train', tokenizer=None, vocab=None, corpus=None,  txt_seq_length=100, pc_seq_length=80, txt_mask_ratio=0.15, **args):
+    tokenizer = registry.get_language_model(tokenizer)()
+    dataset = SynDataset(split=split, max_obj_len=pc_seq_length, **args)
     vocab = registry.get_language_model("vocabulary")(vocab)
     return CaptionDatasetWrapper(dataset, tokenizer, vocab, corpus, txt_seq_length, pc_seq_length, txt_mask_ratio, split)
     

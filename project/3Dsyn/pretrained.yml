@@ -6,14 +6,14 @@ pipeline:
   restore_model: True
 
   pretrain_dataset:
-    name: 3dsyn
+    name: pretrain
     args:
       tokenizer: bert_tokenizer
-      txt_seq_length: 50
+      vocab: ./data/scanfamily/annotations/meta_data/scanrefer_vocab.pth
+      corpus: ./data/scanfamily/annotations/meta_data/scanrefer_corpus.pth
+      txt_seq_length: 200
       pc_seq_length: 80
-      anno_type: 'nr3d'
       pc_type: 'gt'
-      sr3d_plus_aug: True
 
   lang_encoder:
     name: bert_lang_encoder
@@ -32,10 +32,6 @@ pipeline:
       num_layers: 4
       dim_loc: 6
       pairwise_rel_type: center
-      mixup_strategy: linear_decay
-      mixup_stage1: 0.2
-      mixup_stage2: 0.4
-      pretrain: True
 
   unified_encoder:
     name: unified_encoder_v2
@@ -63,16 +59,16 @@ pipeline:
     args:
       hidden_size: 768
       vocab_size: 30522
-
+    
   caption_head:
     name: caption_head_v1
     args:
       hidden_size: 768
       vocab_size: 4231
 
-  refer_loss:
-    name: refer_loss_v1
-  
+  pretrain_loss:
+    name: pretrain_loss_v1
+
   logger:
     name: tensorboard_logger
     args:
@@ -81,9 +77,9 @@ pipeline:
   saver:
     name: model_saver
     args:
-      save_name: new_pretrain.pth
+      save_name: pretrain_weights.pth
       load_dir: project/pretrain_weights
-      load_name: pretrain.pth
+      load_name: pretrain_weights.pth
 
   batch_size: 64
   learning_rate: 1.0e-4
@@ -95,4 +91,3 @@ pipeline:
   unified_lr_mul: 1.0
   beta1: 0.9
   beta2: 0.98
-  

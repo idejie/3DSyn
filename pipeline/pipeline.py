@@ -72,6 +72,7 @@ class OptimusPrimePipeline(Pipeline, NormalDataloaderMixin, ModelOptimizationMix
                 self.test_dataset = registry.get_dataset(cfg['caption_dataset']['name'])(split='val', **cfg['caption_dataset']['args'])
         elif self.task == 'pretrain':
             self.train_dataset = registry.get_dataset(cfg['refer_dataset']['name'])(split='train', **cfg['refer_dataset']['args'])
+            # TODO: no test dataset
             self.test_dataset = registry.get_dataset(cfg['refer_dataset']['name'])(split='val', **cfg['refer_dataset']['args'])
         else:
             raise NotImplementedError("task " + self.task + " is not implemented")
@@ -116,6 +117,8 @@ class OptimusPrimePipeline(Pipeline, NormalDataloaderMixin, ModelOptimizationMix
             self.qa_loss = registry.get_optimizer(cfg["qa_loss"]['name'])
         elif self.task == 'caption':
             self.caption_loss = registry.get_optimizer(cfg['caption_loss']['name'])
+        elif self.task == 'pretrain':
+            self.pretrain_loss = registry.get_optimizer(cfg['pretrain_loss']['name'])
         
         # restore model
         if cfg['restore_model']:
@@ -301,6 +304,8 @@ class OptimusPrimePipeline(Pipeline, NormalDataloaderMixin, ModelOptimizationMix
             data_dict = self.get_qa_metrics(data_dict)
         elif self.task == 'caption':
             data_dict = self.get_caption_metrics(data_dict)
+        elif self.task == 'pretrain':
+            data_dict = self.get_pretrain_metrics(data_dict)
         return data_dict
      
     def record_train_step(self, data_dict, step):
@@ -346,6 +351,15 @@ class OptimusPrimePipeline(Pipeline, NormalDataloaderMixin, ModelOptimizationMix
                 'caption_cls_loss': data_dict['caption_cls_loss'],
                 # acc
                 'caption_cls_acc_mask': data_dict['caption_cls_acc_mask']
+            })
+        elif self.task == 'pretrain':
+            log_dict.update({
+                # loss
+                'txt_lm_cls_loss': data_dict['txt_lm_cls_loss'],
+                'scene_txt_match_loss': data_dict['scene_txt_match_loss'],
+                # acc
+                'txt_lm_cls_acc': data_dict['txt_lm_cls_acc'],
+                'scene_txt_match_acc': data_dict['scene_txt_match_acc']
             })
         for k in list(log_dict.keys()):
             log_dict['train/' + k] = log_dict.pop(k)

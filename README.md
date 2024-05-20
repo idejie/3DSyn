@@ -54,6 +54,20 @@ data/scanfamily/annotations/
         ├── v1_balanced_sqa_annotations_train_scannetv2.json
         └── v1_balanced_sqa_annotations_val_scannetv2.json
 ```
+
+### Pretrain
+
+To pretrain the model, use the following command:
+```
+python3 run.py --config config/pretrain/pretrained.yml
+```
+
+### Fine-tuning
+To fine-tune the model, use the following command:
+```
+python3 run.py --config config/finetune/{task}_config.yml
+```
+
 ### Evaluation
 Download all checkpoints and put them under `project/pretrain_weights`
 
@@ -65,10 +79,10 @@ Download all checkpoints and put them under `project/pretrain_weights`
 | Nr3D                 | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Nr3D from pre-trained checkpoint.      |
 | Scan2Cap             | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Scan2Cap from pre-trained checkpoint.  |
 
-### Run 
+#### Run 
 To run the model, use the following command, task includes scanrefer, scanqa, sr3d, nr3d, and scan2cap.
 ```
-python3 run.py --config project/3dsyn/{task}_config.yml
+python3 run.py --config config/eval/{task}_config.yml
 ```
 
 ### Acknowledgement

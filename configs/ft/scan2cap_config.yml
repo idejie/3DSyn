@@ -1,17 +1,17 @@
 pipeline:
   name: optimus_prime
 
-  task: pretrain
-  eval_task: True
+  task: caption
+  eval_task: False
   restore_model: True
 
-  pretrain_dataset:
-    name: pretrain
+  caption_dataset:
+    name: caption_task
     args:
       tokenizer: bert_tokenizer
       vocab: ./data/scanfamily/annotations/meta_data/scanrefer_vocab.pth
       corpus: ./data/scanfamily/annotations/meta_data/scanrefer_corpus.pth
-      txt_seq_length: 200
+      txt_seq_length: 35
       pc_seq_length: 80
       pc_type: 'gt'
 
@@ -66,8 +66,8 @@ pipeline:
       hidden_size: 768
       vocab_size: 4231
 
-  pretrain_loss:
-    name: pretrain_loss_v1
+  caption_loss:
+    name: caption_loss_v1
 
   logger:
     name: tensorboard_logger
@@ -77,9 +77,9 @@ pipeline:
   saver:
     name: model_saver
     args:
-      save_name: pretrain_weights.pth
+      save_name: model.pth
       load_dir: project/pretrain_weights
-      load_name: pretrain_weights.pth
+      load_name: scan2cap.pth
 
   batch_size: 64
   learning_rate: 1.0e-4

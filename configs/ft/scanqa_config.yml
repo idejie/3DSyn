@@ -1,18 +1,18 @@
 pipeline:
   name: optimus_prime
 
-  task: sqa
-  eval_task: True
+  task: scanqa
+  eval_task: False
   restore_model: True
 
   qa_dataset:
-    name: sqa_task
+    name: scanqa_task
     args:
       tokenizer: bert_tokenizer
-      txt_seq_length: 70
-      pc_seq_length: 40
+      txt_seq_length: 50
+      pc_seq_length: 80
       pc_type: 'gt'
-
+  
   lang_encoder:
     name: bert_lang_encoder
     args:
@@ -50,14 +50,14 @@ pipeline:
   qa_head:
     name: qa_head_v1
     args:
-      num_answers: 706
+      num_answers: 8864
 
   pretrain_head:
     name: pretrain_head_v1
     args:
       hidden_size: 768
       vocab_size: 30522
-  
+
   caption_head:
     name: caption_head_v1
     args:
@@ -65,7 +65,7 @@ pipeline:
       vocab_size: 4231
   
   qa_loss:
-    name: sqa_loss_v1
+    name: qa_loss_v1
   
   logger:
     name: tensorboard_logger
@@ -76,16 +76,17 @@ pipeline:
     name: model_saver
     args:
       save_name: model.pth
-      load_dir: project/pretrain_weights
-      load_name: sqa.pth
+      load_dir: project/pretrain_weights/
+      load_name: scanqa.pth
 
   batch_size: 64
   learning_rate: 1.0e-4
-  grad_norm: 10.0
-  epochs: 50
+  grad_norm: 5.0
+  epochs: 30
   warmup_steps: 2000
   lang_lr_mul: 0.1
   point_lr_mul: 1.0
   unified_lr_mul: 1.0
   beta1: 0.9
   beta2: 0.98
+  

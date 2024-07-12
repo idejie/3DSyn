@@ -93,3 +93,13 @@ We would like to thank the authors of [Vil3dref](https://github.com/cshizhe/vil3
 ### Citation:
 
 ```
+@inproceedings{3DSyn,
+  title     = {3D Vision and Language Pretraining with Large-Scale Synthetic Data},
+  author    = {Dejie Yang, Zhu Xu, Wentao Mo, Qingchao Chen, Siyuan Huang, Yang Liu},
+  booktitle = {Proceedings of the Thirty-Second International Joint Conference on
+               Artificial Intelligence, {IJCAI-24}},
+  publisher = {International Joint Conferences on Artificial Intelligence Organization},
+  year      = {2024},
+}
+
+```

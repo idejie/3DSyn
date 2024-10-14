@@ -73,10 +73,11 @@ Download all checkpoints and put them under `project/pretrain_weights`
 
 | Checkpoint           | Link                                                         | Note                                              |
 | :------------------- | ------------------------------------------------------------ | ------------------------------------------------- |
-| ScanRefer            | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned ScanRefer from pre-trained checkpoint. |
-| ScanQA               | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tined ScanQA from pre-trained checkpoint.    |
-| Sr3D                 | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Sr3D from pre-trained checkpoint.      |
-| Nr3D                 | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Nr3D from pre-trained checkpoint.      |
+| Pretrain | [link](https://pan.baidu.com/s/1oyW4ZqmmJn-sp3vDLCaPYQ?pwd=45pu)||
+| ScanRefer            | [link](https://pan.baidu.com/s/13JGq-nA0llWHZ0k0lySufw?pwd=agrk) | Fine-tuned ScanRefer from pre-trained checkpoint. |
+| ScanQA               | [link](https://pan.baidu.com/s/123CkrlA67pBr295CGHFbsQ?pwd=r76v) | Fine-tined ScanQA from pre-trained checkpoint.    |
+| Sr3D                 | [link](https://pan.baidu.com/s/123CkrlA67pBr295CGHFbsQ?pwd=r76v) | Fine-tuned Sr3D from pre-trained checkpoint.      |
+| Nr3D                 | [link](https://pan.baidu.com/s/1g2fWLBFi0_c9Gt9EwgMnTQ?pwd=mrjs) | Fine-tuned Nr3D from pre-trained checkpoint.      |
 | Scan2Cap             | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Scan2Cap from pre-trained checkpoint.  |
 
 #### Run 

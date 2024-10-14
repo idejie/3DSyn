@@ -78,7 +78,7 @@ Download all checkpoints and put them under `project/pretrain_weights`
 | ScanQA               | [link](https://pan.baidu.com/s/123CkrlA67pBr295CGHFbsQ?pwd=r76v) | Fine-tined ScanQA from pre-trained checkpoint.    |
 | Sr3D                 | [link](https://pan.baidu.com/s/123CkrlA67pBr295CGHFbsQ?pwd=r76v) | Fine-tuned Sr3D from pre-trained checkpoint.      |
 | Nr3D                 | [link](https://pan.baidu.com/s/1g2fWLBFi0_c9Gt9EwgMnTQ?pwd=mrjs) | Fine-tuned Nr3D from pre-trained checkpoint.      |
-| Scan2Cap             | [link](https://pan.baidu.com/s/1DGvoN_Y_maX8hSwY3KPP4g?pwd=qkrc) | Fine-tuned Scan2Cap from pre-trained checkpoint.  |
+| Scan2Cap             | [link](https://pan.baidu.com/s/1TTfboFXRV86yb2u5frkUKg?pwd=xurm) | Fine-tuned Scan2Cap from pre-trained checkpoint.  |
 
 #### Run 
 To run the model, use the following command, task includes scanrefer, scanqa, sr3d, nr3d, and scan2cap.

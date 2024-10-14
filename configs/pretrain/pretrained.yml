@@ -14,6 +14,14 @@ pipeline:
       txt_seq_length: 200
       pc_seq_length: 80
       pc_type: 'gt'
+    
+  refer_dataset:
+    name: pretrain
+    args:
+      tokenizer: bert_tokenizer
+      txt_seq_length: 50
+      pc_seq_length: 80
+      pc_type: 'gt'
 
   lang_encoder:
     name: bert_lang_encoder

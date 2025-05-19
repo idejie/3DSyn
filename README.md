@@ -55,18 +55,6 @@ data/scanfamily/annotations/
         └── v1_balanced_sqa_annotations_val_scannetv2.json
 ```
 
-### Pretrain
-
-To pretrain the model, use the following command:
-```
-python3 run.py --config config/pretrain/pretrained.yml
-```
-
-### Fine-tuning
-To fine-tune the model, use the following command:
-```
-python3 run.py --config config/finetune/{task}_config.yml
-```
 
 ### Evaluation
 Download all checkpoints and put them under `project/pretrain_weights`
